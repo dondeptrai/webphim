@@ -1,4 +1,44 @@
 <?php
+session_start();
+@include 'config.php';
+
+
+if (isset($_GET['id'])) {
+  
+    $idPhim = $_GET['id'];
+    
+
+    $idUser = $_SESSION['user_id'];
+
+    
+    $thoiGian = date("Y-m-d H:i:s");
+
+   
+    $sql_check = "SELECT * FROM lichsuxemphim WHERE idPhim = '$idPhim' AND id = '$idUser'";
+    $result_check = mysqli_query($conn, $sql_check);
+    if (mysqli_num_rows($result_check) > 0) {
+        
+        $sql_update = "UPDATE lichsuxemphim SET thoigian = '$thoiGian' WHERE idPhim = '$idPhim' AND id = '$idUser'";
+        if (mysqli_query($conn, $sql_update)) {
+            echo "Thời gian đã được cập nhật!";
+        } else {
+            echo "Lỗi khi cập nhật thời gian: " . mysqli_error($conn);
+        }
+    } else {
+        
+        $sql_insert = "INSERT INTO lichsuxemphim (id, idPhim, thoigian) VALUES ('$idUser', '$idPhim', '$thoiGian')";
+        if (mysqli_query($conn, $sql_insert)) {
+            echo "Dữ liệu đã được insert thành công!";
+        } else {
+            echo "Lỗi khi insert dữ liệu mới: " . mysqli_error($conn);
+        }
+    }
+
+
+    mysqli_close($conn);
+}
+?>
+<?php
 $link = new mysqli("localhost", "root", "", "webphim");
 $id = $_GET['id'];
 $sql = "SELECT * FROM phim WHERE maPhim = $id";
