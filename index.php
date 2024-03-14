@@ -74,6 +74,12 @@ if(isset($_SESSION['user_id'])) {
                 case 1011:
                     include("view/lichsuxemphim.php");
                     break;
+                case 1011:
+                    include("view/capnhat.php");
+                    break;
+                case 1012:
+                    include("view/doipass.php");
+                    break;
             }
         } else
             include("view/pagination.php");            
