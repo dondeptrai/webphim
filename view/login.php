@@ -48,6 +48,7 @@
         <input type="password" name="password" required placeholder="nhập mật khẩu">
         <input type="submit" name="dangnhap" value="Đăng nhập" class="btn">
         <p>Bạn chưa có tài khoản? <a href="register.php">Đăng ký</a></p>
+        <a href="quenpass.php" style="color:red;font-size:20px;">Quên mật khẩu</a>
     </form>
   </div>  
 </body>
