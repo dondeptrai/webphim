@@ -1,48 +1,23 @@
 <?php
-session_start();
-@include 'config.php';
-
-
-if (isset($_GET['id'])) {
-  
-    $idPhim = $_GET['id'];
-    
-
-    $idUser = $_SESSION['user_id'];
-
-    
-    $thoiGian = date("Y-m-d H:i:s");
-
-   
-    $sql_check = "SELECT * FROM lichsuxemphim WHERE idPhim = '$idPhim' AND id = '$idUser'";
-    $result_check = mysqli_query($conn, $sql_check);
-    if (mysqli_num_rows($result_check) > 0) {
-        
-        $sql_update = "UPDATE lichsuxemphim SET thoigian = '$thoiGian' WHERE idPhim = '$idPhim' AND id = '$idUser'";
-        if (mysqli_query($conn, $sql_update)) {
-            echo "Thời gian đã được cập nhật!";
-        } else {
-            echo "Lỗi khi cập nhật thời gian: " . mysqli_error($conn);
-        }
-    } else {
-        
-        $sql_insert = "INSERT INTO lichsuxemphim (id, idPhim, thoigian) VALUES ('$idUser', '$idPhim', '$thoiGian')";
-        if (mysqli_query($conn, $sql_insert)) {
-            echo "Dữ liệu đã được insert thành công!";
-        } else {
-            echo "Lỗi khi insert dữ liệu mới: " . mysqli_error($conn);
-        }
-    }
-
-
-    mysqli_close($conn);
-}
-?>
-<?php
 $link = new mysqli("localhost", "root", "", "webphim");
 $id = $_GET['id'];
 $sql = "SELECT * FROM phim WHERE maPhim = $id";
 $result = $link->query($sql);
+if(isset($_GET['del'])){
+    $id_comment=$_GET['del'];
+    $sql3 = "DELETE comment FROM comment WHERE id_comment=$id_comment";
+    $result3 = $link->query($sql3);
+}
+if(isset($_POST['cmt-btn'])){
+    $id_product=$_GET['id'];
+    $id_user=$_SESSION['user_id'];
+    $article=$_POST['comment'];
+    $sql1 = "INSERT INTO comment(id_product, id_user, article) VALUES ($id_product, $id_user, '$article')";
+    $result1 = $link->query($sql1);
+}
+$sql2="SELECT * FROM comment INNER JOIN users ON comment.id_user=users.id WHERE comment.id_product=$id";
+$result2 = $link->query($sql2);
+
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
@@ -59,6 +34,7 @@ if ($result->num_rows > 0) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Xem phim: <?php echo $tenPhim; ?></title>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
 
     <body>
@@ -94,6 +70,45 @@ if ($result->num_rows > 0) {
                 </div>
             </div>
         </div>
+        <div class="container">
+    <h2 class="mt-5 mb-3 text-light">Leave a Comment</h2>
+    <form action="" method="POST">
+        <?php
+            if(isset($_SESSION['user_id'])){
+                echo'<div class="mb-3">
+                <label for="comment" class="form-label">Your Comment</label>
+                <textarea class="form-control" id="comment" name="comment" rows="3" placeholder="Enter your comment"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" name="cmt-btn">Submit</button>';
+            }else{
+                echo'<div class="mb-3">
+                <label for="comment" class="form-label">Your Comment</label>
+                <textarea class="form-control" id="comment" name="comment" rows="3" placeholder="BẠN PHẢI ĐĂNG NHẬP MỚI CÓ THỂ BÌNH LUẬN!" disabled></textarea>
+              </div>
+              ';
+            }
+        ?>
+    </form>
+    <ul class="list-group mt-5">
+    <?php
+        if ($result2->num_rows > 0) {
+            while ($row2 = $result2->fetch_assoc()) {
+                if(isset($_SESSION['user_id'])){
+                    if($row2['id']==$_SESSION['user_id']){
+                        echo'<li class="list-group-item d-flex justify-content-between"><h3>'.$row2['name'].':  '.$row2['article'].'</h3><h3>'.$row2['date_comment'].'</h3><a href="index.php?pid=1010&id='.$_GET['id'].'&del='.$row2['id_comment'].'">Xóa</a></li>';
+                    }else{
+                        echo'<li class="list-group-item d-flex justify-content-between"><h3>'.$row2['name'].':  '.$row2['article'].'</h3><h3>'.$row2['date_comment'].'</h3></li>';
+                    }
+                }else{
+                    echo'<li class="list-group-item d-flex justify-content-between"><h3>'.$row2['name'].':  '.$row2['article'].'</h3><h3>'.$row2['date_comment'].'</h3></li>';
+                }
+                
+            }
+        }
+    ?>
+</ul>
+    
+  </div>
 
     <?php
 } else {
