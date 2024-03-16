@@ -13,9 +13,9 @@
         $result = mysqli_query($conn, $check_query);
 
         if(mysqli_num_rows($result) > 0) {
-            echo 'Tài khoản đã tồn tại. Vui lòng chọn địa chỉ email khác.';
+            echo "<script>alert('Địa chỉ email đã tồn tại. Vui lòng chọn địa chỉ email khác.'); window.location.href='register.php'</script>";
         } elseif($pass != $cpass) {
-            echo 'Mật khẩu nhập lại không trùng khớp.';
+            echo "<script>alert('Mật khẩu nhập lại không trùng khớp.'); window.location.href='register.php'</script>";
         }else {
             // Nếu tài khoản chưa tồn tại, thực hiện thêm vào cơ sở dữ liệu
             $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$pass')";
@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="../style.css">
     <title>ĐĂNG KÝ</title>
 </head>
-<body>
+<body style="margin:0%">
     <div class ="re">
         <form action="register.php" method="post">
             <h3 >ĐĂNG KÝ</h3>
