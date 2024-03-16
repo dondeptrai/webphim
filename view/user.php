@@ -17,6 +17,10 @@ if (!isset($_SESSION['user_name'])) {
             <h3><b>User name:</b> <?php echo $roww['name']?></h3>
             <a href="view/logout.php" style="color:red;font-size: 1.3rem;"><b>Đăng xuất</a>
             <br>
+            <br>
+            <a href="view/capnhat.php"style="color:gray;font-size: 1.1rem;"><b>Cập nhật thông tin</b></a>
+            <br>
+            <br>
         </div>
     <?php
 }
