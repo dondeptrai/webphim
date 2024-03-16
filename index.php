@@ -25,10 +25,10 @@
 // Kiểm tra xem người dùng đã đăng nhập chưa
 if(isset($_SESSION['user_id'])) {
     // Người dùng đã đăng nhập, cho phép họ xem lịch sử xem phim
-    echo '<a href="index.php?pid=1011" class="history">Lịch sử xem phim</a>';
+    echo '<a href="index.php?pid=1011" class="history"  style="font-size: 24px; color: white;" >Lịch sử xem phim</a>';
 } else {
     // Người dùng chưa đăng nhập, chuyển họ đến trang đăng nhập
-    echo '<a href="index.php?pid=1005" class="history">Lịch sử xem phim</a>';
+     echo '<a class="history"  style="font-size: 16px; color: white">BẠN PHẢI ĐĂNG NHẬP MỚI CÓ THỂ XEM LỊCH SỬ PHIM!!!</a>';
 }
 ?>
 
