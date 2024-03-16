@@ -202,6 +202,52 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_type`) VALUES
 -- Indexes for dumped tables
 --
 
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `ratings`
+--
+
+CREATE TABLE `ratings` (
+  `id` int(11) NOT NULL,
+  `id_product` int(11) NOT NULL,
+  `rating` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `ratings`
+--
+
+INSERT INTO `ratings` (`id`, `id_product`, `rating`) VALUES
+(35, 1, 7),
+(36, 1, 10),
+(37, 1, 6),
+(38, 1, 10),
+(39, 2, 10),
+(40, 4, 9),
+(41, 7, 8),
+(42, 1, 9),
+(43, 1, 10),
+(44, 1, 10),
+(45, 1, 10),
+(46, 1, 10),
+(47, 4, 10),
+(48, 1, 9),
+(49, 1, 10),
+(50, 34, 9);
+
+ALTER TABLE `ratings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `ratings`
+--
+ALTER TABLE `ratings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 --
 -- Indexes for table `comment`
 --
