@@ -99,8 +99,7 @@ if ($result->num_rows > 0) {
                     }else{
                         echo'<li class="list-group-item d-flex justify-content-between"><h3>'.$row2['name'].':  '.$row2['article'].'</h3><h3>'.$row2['date_comment'].'</h3></li>';
                     }
-                }else{
-                    echo'<li class="list-group-item d-flex justify-content-between"><h3>'.$row2['name'].':  '.$row2['article'].'</h3><h3>'.$row2['date_comment'].'</h3></li>';
+                    
                 }
                 
             }
