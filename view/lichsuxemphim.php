@@ -1,4 +1,37 @@
-<h2>Lịch sử xem phim</h2>
+<style>
+    .phim-container1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+    .phim1 {
+        flex: 0 1 calc(25% - 70px);
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .phim1 h4 {
+        margin-top: 0;
+        font-size: 18px;
+        color: white;
+    }
+
+    .phim1 p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .phim1 iframe {
+        width: 100%;
+        height: 150px;
+    }
+</style>
 <?php
 $link = new mysqli("localhost", "root", "", "webphim");
 
