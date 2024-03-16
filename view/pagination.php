@@ -29,6 +29,10 @@ $total_pages = ceil($total_movies / $per_page);
 <div>
     <?php
     while ($row = $result->fetch_assoc()) {
+        $id=$row['maPhim'];
+        $sql1 = $link -> query(query:"SELECT AVG(rating) AS avg FROM ratings WHERE id_product='$id'");
+        $result1=$sql1->fetch_array();
+        $avg = $result1['avg'];
     ?>
         <div  align="center"  class="main" style="float:left">
             <div class="movie">
@@ -37,7 +41,7 @@ $total_pages = ceil($total_movies / $per_page);
                     <br>
                     <div class="movie-info">
                         <span><b><?php echo $row["Ten"] ?></b></span>
-                        <span class="green"><?php echo $row["Danh_Gia"] ?></span>
+                        <span class="green"><?php echo round($avg, precision:2) ?></span>
                     </div>
                     <span class="overview"><?php echo $row["Noi_Dung"] ?></span>
                 </a>
