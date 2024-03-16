@@ -322,27 +322,6 @@ main{
   padding-left:10px;
 }
 
-
-/* danh gia sao */
-.rating-container {
-  text-align: left;
-}
-
-.rating {
-  font-size: 30px;
-}
-
-.rating .star {
-  cursor: pointer;
-  color: #ccc;
-  margin: 0 ;
-}
-
-.rating .star:hover,
-.rating .star.active {
-color: #ffcc00;
-}
-
 .danhgia{
   width: 30px;
   height:30px;
