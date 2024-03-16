@@ -28,23 +28,7 @@
             <p><b>Thời lượng: </b><?php echo $row["Thoi_Luong"]?></p>
             <hr width="100%">
 
-            <div class="rating-container">    
-                          
-                <div class="rating" data-rating="0">
-                    <span class="danhgia"><?php echo $row["Danh_Gia"]?></span>  
-                    <span class="star" data-value="1">&#9733;</span>
-                    <span class="star" data-value="2">&#9733;</span>
-                    <span class="star" data-value="3">&#9733;</span>
-                    <span class="star" data-value="4">&#9733;</span>
-                    <span class="star" data-value="5">&#9733;</span>
-                    <span class="star" data-value="6">&#9733;</span>
-                    <span class="star" data-value="7">&#9733;</span>
-                    <span class="star" data-value="8">&#9733;</span>
-                    <span class="star" data-value="9">&#9733;</span>
-                    <span class="star" data-value="10">&#9733;</span>
-                </div>
-                <p id="rating-value">Đánh giá của bạn là: 0 sao</p>
-            </div>
+           <?php include("ratings.php")?>
             <hr>
             <div class="thongtin">
                 <h2>Tóm tắt</h2>
@@ -65,6 +49,10 @@
                 <?php 
                 while ($row=$result->fetch_assoc())
                 {
+                    $id=$row['maPhim'];
+                    $sql1 = $link -> query(query:"SELECT AVG(rating) AS avg FROM ratings WHERE id_product='$id'");
+                    $result1=$sql1->fetch_array();
+                    $avg = $result1['avg'];
                 ?>  
                 <a href="index.php?pid=1001&id=<?php echo $row["maPhim"]?>" style="text-decoration:none;color:black">
                     <div class="phimtuongtu"> 
@@ -74,7 +62,7 @@
                     <div align="left" style="flex-basis:60%;padding-left:10px">
                         <span><b><?php echo $row["Ten"]?></b></span>
                     <br>
-                        <span class="green star"><?php echo $row["Danh_Gia"]?> &#9733;</span>
+                        <span class="green star"><?php echo round($avg, precision:2)?> &#9733;</span>
                     </div> 
                         
                     <br>                         
