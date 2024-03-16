@@ -8,16 +8,29 @@ if (isset($_GET['id']) && isset($_SESSION['user_id'])) {
     $idUser = $_SESSION['user_id'];
     $thoiGian = date("Y-m-d H:i:s");
 
+    // Kiểm tra xem lịch sử xem phim đã tồn tại chưa
     $sql_check = "SELECT * FROM lichsuxemphim WHERE idPhim = '$idPhim' AND id = '$idUser'";
     $result_check = mysqli_query($conn, $sql_check);
-    if (mysqli_num_rows($result_check) > 0) {
-        // Nếu idPhim đã tồn tại, chỉ cập nhật lại thời gian
-        $sql_update = "UPDATE lichsuxemphim SET thoigian = '$thoiGian' WHERE idPhim = '$idPhim' AND id = '$idUser'";
+
+    // Kiểm tra kết quả của truy vấn
+    if ($result_check) {
+        if (mysqli_num_rows($result_check) > 0) {
+            $sql_update = "UPDATE lichsuxemphim SET thoigian = '$thoiGian' WHERE idPhim = '$idPhim' AND id = '$idUser'";
+            $result_update = mysqli_query($conn, $sql_update);
+        } else {
+            $sql_insert = "INSERT INTO lichsuxemphim (id, idPhim, thoigian) VALUES ('$idUser', '$idPhim', '$thoiGian')";
+            $result_insert = mysqli_query($conn, $sql_insert);
+        }
+    } else {
+        echo "Lỗi truy vấn: " . mysqli_error($conn);
     }
+
     // Đóng kết nối
     mysqli_close($conn);
 }
 ?>
+
+
 <?php
 $link = new mysqli("localhost", "root", "", "webphim");
 $id = $_GET['id'];
