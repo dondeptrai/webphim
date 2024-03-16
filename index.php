@@ -17,7 +17,7 @@
         </div>
     </header>
     <br>    
-    <a href="index.php?pid=1011">Lịch sử xem phim</a>
+    <a href="index.php?pid=1011" style="font-size: 24px; color: white;" >Lịch sử xem phim</a>
     <div align="center">
         <?php include("view/theloai.php"); ?>
     </div>
