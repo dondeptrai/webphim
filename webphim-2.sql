@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: localhost
--- Thời gian đã tạo: Th3 14, 2024 lúc 07:04 AM
--- Phiên bản máy phục vụ: 10.4.28-MariaDB
--- Phiên bản PHP: 8.2.4
+-- Host: localhost
+-- Generation Time: Mar 16, 2024 at 07:38 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,34 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `webphim`
+-- Database: `webphim`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `lichsuxemphim`
+-- Table structure for table `comment`
+--
+
+CREATE TABLE `comment` (
+  `id_comment` int(11) NOT NULL,
+  `id_product` int(11) NOT NULL,
+  `id_user` int(255) NOT NULL,
+  `date_comment` datetime NOT NULL DEFAULT current_timestamp(),
+  `article` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`id_comment`, `id_product`, `id_user`, `date_comment`, `article`) VALUES
+(16, 2, 2, '2024-03-16 12:12:46', 'một lần nữa SongKang đỉnh vãi');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lichsuxemphim`
 --
 
 CREATE TABLE `lichsuxemphim` (
@@ -35,7 +56,7 @@ CREATE TABLE `lichsuxemphim` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `lichsuxemphim`
+-- Dumping data for table `lichsuxemphim`
 --
 
 INSERT INTO `lichsuxemphim` (`malichsu`, `id`, `idPhim`, `thoigian`) VALUES
@@ -48,7 +69,7 @@ INSERT INTO `lichsuxemphim` (`malichsu`, `id`, `idPhim`, `thoigian`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `phim`
+-- Table structure for table `phim`
 --
 
 CREATE TABLE `phim` (
@@ -69,7 +90,7 @@ CREATE TABLE `phim` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `phim`
+-- Dumping data for table `phim`
 --
 
 INSERT INTO `phim` (`maPhim`, `Ten`, `Quoc_Gia`, `MaTheloai`, `Phan_Loai`, `Dien_Vien`, `Nam`, `Thoi_Luong`, `Danh_Gia`, `Noi_Dung`, `Ngon_Ngu`, `hinhanh`, `trailerlink`, `linkphim`) VALUES
@@ -98,8 +119,8 @@ INSERT INTO `phim` (`maPhim`, `Ten`, `Quoc_Gia`, `MaTheloai`, `Phan_Loai`, `Dien
 (23, 'A Haunting in Venice', 'Âu-Mỹ', 5, 'Phim lẻ', 'Kenneth Branagh, Kyle Allen, Camille Cottin, Jamie Dornan, Tina Fey, Jude Hill', 2023, '1 tiếng 35 phút', 8.7, 'Án Mạng Ở Venice dựa trên tiểu thuyết Halloween Party của nhà văn Agatha Christie, hành trình phá án của thám tử Hercule Poirot tiếp tục được đưa lên màn ảnh rộng. Thám tử nổi tiếng Hercule Poirot, hiện đã nghỉ hưu và sống lưu vong ở Venice, miễn cưỡng tham dự một buổi lễ Halloween tại một cung điện ma ám, mục nát. Khi một trong những vị khách bị sát hại, vị thám tử bị đẩy vào một thế giới đầy bóng tối và bí mật đầy nham hiểm.', 'Phụ đề Tiếng Việt', 'venice.jpg', 'https://www.youtube.com/embed/yEddsSwweyE?si=TdjWySSFh_Ul1kcG', ''),
 (24, 'Haunted Mansion', 'Âu-Mỹ', 1, 'Phim lẻ', 'Jamie Lee Curtis, Owen Wilson, Rosario Dawson', 2023, '1 tiếng 40 phút', 7.7, 'Dinh Thự Ma Ám kể về một bà mẹ đơn thân tên Gabbie thuê một hướng dẫn viên du lịch, một nhà ngoại cảm, một linh mục và một nhà sử học để giúp trừ tà cho căn biệt thự mới mua của họ; sau khi phát hiện ra nó là nơi sinh sống của ma.', 'Phụ đề Tiếng Việt', 'mansion.jpg', 'https://www.youtube.com/embed/AjLKTz81bj8?si=FDXLduTA8HhP5Ujz', ''),
 (25, 'No One Will Save You', 'Âu-Mỹ', 4, 'Phim lẻ', 'Kaitlyn Dever, Elizabeth Kaluev, Zack Duhame, Lauren L. Murray, Geraldine Singer, Dane Rhodes', 2023, '1 tiếng 33 phút', 8.6, 'Sẽ Không Ai Cứu Bạn kể về một người đồng hương bị đày ải đầy lo lắng phải chiến đấu với người ngoài hành tinh đã tìm được đường vào nhà cô.', 'Phụ đề Tiếng Việt', 'saveyou.jpg', 'https://www.youtube.com/embed/IcA02w6rm44?si=F27NVNZZXos130fD', ''),
-(26, 'WONDER WOMAN: NỮ THẦN CHIẾN BINH', 'Âu-Mỹ', 2, 'Phim lẻ', 'Robin Wright, David Thewlis, Connie Nielsen, Elena Anaya, Chris Pine, Gal Gadot, Danny Huston, Ewen Bremner, Saïd Taghmaoui', 2017, '1 tiếng 46 phút', 9.9, 'Phim Wonder Woman: Nữ Thần Chiến Binh: Trước khi trở thành Wonder Woman, Diana (Gal Gadot) là công chúa chiến binh Amazon của hòn đảo Themyscira. Khi chàng phi công Steve Trevor (Chris Pine) trôi dạt vào đảo và kể về cuộc đại chiến đang diễn ra tại thế giới bên ngoài, Diana quyết định rời khỏi quê nhà để giải cứu nhân loại. Từ đó cô khám phá ra quyền năng và sứ mệnh thật sự của mình.', 'Phụ đề Tiếng Việt + Thuyết Minh', 'woman.jpg', 'https://www.youtube.com/embed/VSB4wGIdDwo?si=PPaoFE15LN-yCjb8', ''),
-(27, '97 Minutes', 'Âu-Mỹ', 2, 'Phim lẻ', 'Jonathan Rhys Meyers, Alec Baldwin, MyAnna Buring, Jo Martin, Michael Sirow, Pavan Grover', 2023, '1 tiếng', 7.3, '97 Phút kể về một kịch bản đồng hồ tích tắc mở ra khi chiếc máy bay 767 bị không tặc đối mặt với thảm họa sắp xảy ra khi nguồn cung cấp nhiên liệu của nó cạn kiệt, chỉ còn 97 phút.', 'Phụ đề Tiếng Việt', '97.jpg', 'https://www.youtube.com/embed/BvFSHL9erCU?si=GXINOtu4-6J1Mq7m', ''),
+(26, 'WONDER WOMAN: NỮ THẦN CHIẾN BINH', 'Âu-Mỹ', 2, 'Phim lẻ', 'Robin Wright, David Thewlis, Connie Nielsen, Elena Anaya, Chris Pine, Gal Gadot, Danny Huston, Ewen Bremner, Saïd Taghmaoui', 2017, '1 tiếng 46 phút', 9.9, 'Phim Wonder Woman: Nữ Thần Chiến Binh: Trước khi trở thành Wonder Woman, Diana (Gal Gadot) là công chúa chiến binh Amazon của hòn đảo Themyscira. Khi chàng phi công Steve Trevor (Chris Pine) trôi dạt vào đảo và kể về cuộc đại chiến đang diễn ra tại thế giới bên ngoài, Diana quyết định rời khỏi quê nhà để giải cứu nhân loại. Từ đó cô khám phá ra quyền năng và sứ mệnh thật sự của mình.', 'Phụ đề Tiếng Việt + Thuyết Minh', 'woman.jpg', 'https://www.youtube.com/embed/VSB4wGIdDwo?si=PPaoFE15LN-yCjb8', ''),
+(27, '97 Minutes', 'Âu-Mỹ', 2, 'Phim lẻ', 'Jonathan Rhys Meyers, Alec Baldwin, MyAnna Buring, Jo Martin, Michael Sirow, Pavan Grover', 2023, '1 tiếng', 7.3, '97 Phút kể về một kịch bản đồng hồ tích tắc mở ra khi chiếc máy bay 767 bị không tặc đối mặt với thảm họa sắp xảy ra khi nguồn cung cấp nhiên liệu của nó cạn kiệt, chỉ còn 97 phút.', 'Phụ đề Tiếng Việt', '97.jpg', 'https://www.youtube.com/embed/BvFSHL9erCU?si=GXINOtu4-6J1Mq7m', ''),
 (28, 'Kung Fu Panda', 'Âu-Mỹ', 6, 'Phim lẻ', 'Thành Long, Jack Black, Angelina Jolie, Ian McShane, Dustin Hoffman', 2008, '1 tiếng 33 phút', 8.8, 'Công Phu Gấu Trúc kể về Po là một chú gấu trúc to béo, ham ăn và mê môn võ kungfu. Trong một ngày hội, lời tiên tri từ xưa đã giúp Po có thể thực hiện ước mơ của mình. Xem phim online này, các bạn sẽ theo dõi Po học tập với sư phụ Shifu và nhóm Ngũ Hùng. Nhưng vấn đề ở chỗ cậu chàng lại là kẻ lười biếng nhất thung lũng Thanh Bình. Và rồi mọi chuyện hoàn toàn thay đổi trong phim hd này khi con báo tuyết gian ác Tai Lung trốn thoát khỏi tù. Hắn ráo riết lên kế hoạch tấn công thung lũng. Và người anh hùng được chọn để chiến đấu chống lại Tai Lung, không ai khác chính là Po béo.', 'Phụ đề Tiếng Việt', 'gau.jpg', 'https://www.youtube.com/embed/NRc-ze7Wrxw?si=5OXt2Cjx7ar9ckxx', ''),
 (29, 'KING KONG VÀ NGƯỜI ĐẸP', 'Âu-Mỹ', 2, 'Phim lẻ', 'aomi Watts, Adrien Brody, Jack Black, Andy Serkis, Jamie Bell', 2005, '3 tiếng 20 phút', 8, 'Trong phim King Kong Và Người Đẹp, vì muốn kiếm thật nhiều tiền với những thước phim đắt giá, một đạo diễn đã đưa nhóm làm phim cùng toàn bộ thủy thủ trên chiếc tàu phiêu lưu khám phá hòn đảo nguyên thủy chưa một dấu chân người - đảo Sọ Người. Và những điều kinh hoàng nhất đã xảy ra khi con tàu cập bến, bởi chủ nhân của hòn đảo là một bộ tộc man rợ, đàn khủng long bạo chúa và đầy rẫy sinh vật nguy hiểm, ngay cả giun đất cũng đòi ăn thịt người.', 'Phụ đề Tiếng Việt', 'Kingkong.jpg', 'https://www.youtube.com/embed/1TSidCNA7mQ?si=2t_mjDJgVhVNIj5N', ''),
 (30, '3 DAYS IN MALAY ', 'Âu-Mỹ', 2, 'Phim lẻ', 'Louis Mandylor, Donald Cerrone, Quinton Jackson, Peter Dobson, Ryan Francis, Randall J. Bacon', 2023, '1 tiếng 20 phút', 9.3, '3 Days in Malay kể về thủy quân lục chiến đóng quân tại một sân bay ở Malay trong Thế chiến thứ hai nhận được tin báo về một cuộc đột kích sắp tới của quân Nhật. Không thể phê duyệt quân tiếp viện, họ tham gia vào trận chiến cam go kéo dài 3 ngày chống lại lực lượng kẻ thù.', 'Phụ đề Tiếng Việt', 'malay.jpg', 'https://www.youtube.com/embed/UaEZXYt7Ihk?si=bE2pdkybn-kIXzVg', ''),
@@ -127,7 +148,7 @@ INSERT INTO `phim` (`maPhim`, `Ten`, `Quoc_Gia`, `MaTheloai`, `Phan_Loai`, `Dien
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `theloai`
+-- Table structure for table `theloai`
 --
 
 CREATE TABLE `theloai` (
@@ -136,7 +157,7 @@ CREATE TABLE `theloai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `theloai`
+-- Dumping data for table `theloai`
 --
 
 INSERT INTO `theloai` (`maTheloai`, `tenTheloai`) VALUES
@@ -150,7 +171,7 @@ INSERT INTO `theloai` (`maTheloai`, `tenTheloai`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -162,7 +183,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_type`) VALUES
@@ -174,57 +195,83 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_type`) VALUES
 (6, 'njafbsdj', 'fnfakj@gmail.com', 'c92f1d1f2619172bf87a12e5915702a6', 'user'),
 (9, 'don', 'don@gmail.com', 'a22e8f88026cd1c926c2ddeaf4629425', 'admin'),
 (10, 'dondeptrai', 'don123@gmail.com', '202cb962ac59075b964b07152d234b70', 'user'),
-(11, 'dona', 'dona@gmail.com', '202cb962ac59075b964b07152d234b70', 'user');
+(11, 'dona', 'dona@gmail.com', '202cb962ac59075b964b07152d234b70', 'user'),
+(12, 'Oanh', 'mydayoanhh@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'user');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `lichsuxemphim`
+-- Indexes for table `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`id_comment`),
+  ADD KEY `FK_CustomerID` (`id_product`),
+  ADD KEY `FK_CustomerID1` (`id_user`);
+
+--
+-- Indexes for table `lichsuxemphim`
 --
 ALTER TABLE `lichsuxemphim`
   ADD PRIMARY KEY (`malichsu`);
 
 --
--- Chỉ mục cho bảng `phim`
+-- Indexes for table `phim`
 --
 ALTER TABLE `phim`
   ADD PRIMARY KEY (`maPhim`);
 
 --
--- Chỉ mục cho bảng `theloai`
+-- Indexes for table `theloai`
 --
 ALTER TABLE `theloai`
   ADD PRIMARY KEY (`maTheloai`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `lichsuxemphim`
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `lichsuxemphim`
 --
 ALTER TABLE `lichsuxemphim`
   MODIFY `malichsu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT cho bảng `phim`
+-- AUTO_INCREMENT for table `phim`
 --
 ALTER TABLE `phim`
   MODIFY `maPhim` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `comment`
+--
+ALTER TABLE `comment`
+  ADD CONSTRAINT `FK_CustomerID` FOREIGN KEY (`id_product`) REFERENCES `phim` (`maPhim`),
+  ADD CONSTRAINT `FK_CustomerID1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
