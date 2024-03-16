@@ -431,21 +431,52 @@ li:hover{
   font-size: 20px;
   cursor: pointer;
 }
+.container .btn {
+    font-family: Arial, sans-serif; /* Example font family */
+    font-size: 16px; 
+    font-weight: bold;
+    color: green;
+}
+
+.container {
+    max-width: 810px; 
+    margin: 10px 110px 110px 110px; 
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.container h2 {
+    color: black; 
+}
+.container .form-label {
+    font-family: Arial, sans-serif; 
+    font-size: 20px;
+    font-weight: bold; 
+}
+
+.container textarea.form-control {
+    width: 750px; 
+    height: 100px; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    resize: vertical; 
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+}
 
 
+.container .list-group-item {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #fff; 
+}
 
+.container .list-group-item h3 {
+    margin: 0;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.container .list-group-item a {
+    color: #ff0000;
+}
