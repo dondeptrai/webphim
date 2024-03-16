@@ -1,3 +1,42 @@
+?php
+session_start();
+@include 'config.php';
+
+// Kiểm tra xem có phải phương thức POST không
+if (isset($_GET['id'])) {
+    // Lấy id phim từ dữ liệu được gửi qua POST
+    $idPhim = $_GET['id'];
+
+    // Lấy id user từ session đã được lưu trữ khi người dùng đăng nhập
+    $idUser = $_SESSION['user_id'];
+
+    // Thời gian hiện tại
+    $thoiGian = date("Y-m-d H:i:s");
+
+    // Kiểm tra xem idPhim đã tồn tại trong bảng lichsuxemphim chưa
+    $sql_check = "SELECT * FROM lichsuxemphim WHERE idPhim = '$idPhim' AND id = '$idUser'";
+    $result_check = mysqli_query($conn, $sql_check);
+    if (mysqli_num_rows($result_check) > 0) {
+        // Nếu idPhim đã tồn tại, chỉ cập nhật lại thời gian
+        $sql_update = "UPDATE lichsuxemphim SET thoigian = '$thoiGian' WHERE idPhim = '$idPhim' AND id = '$idUser'";
+        if (mysqli_query($conn, $sql_update)) {
+            echo "Thời gian đã được cập nhật!";
+        } else {
+            echo "Lỗi khi cập nhật thời gian: " . mysqli_error($conn);
+        }
+    } else {
+        // Nếu idPhim chưa tồn tại, thực hiện insert mới
+        $sql_insert = "INSERT INTO lichsuxemphim (id, idPhim, thoigian) VALUES ('$idUser', '$idPhim', '$thoiGian')";
+        if (mysqli_query($conn, $sql_insert)) {
+            echo "Dữ liệu đã được insert thành công!";
+        } else {
+            echo "Lỗi khi insert dữ liệu mới: " . mysqli_error($conn);
+        }
+    }
+
+    // Đóng kết nối
+    mysqli_close($conn);
+}
 <?php
 $link = new mysqli("localhost", "root", "", "webphim");
 $id = $_GET['id'];
