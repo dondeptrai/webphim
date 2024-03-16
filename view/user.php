@@ -1,4 +1,5 @@
 <?php
+   SESSION_START();
     $link=new mysqli("localhost","root","","webphim");
     $sql1="SELECT * FROM `users` WHERE `id` LIKE '".$_SESSION['user_id']."'";
     $result = $link->query($sql1);
