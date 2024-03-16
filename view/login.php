@@ -1,5 +1,5 @@
 <?php   
-session_start();
+    session_start();
     @include 'config.php';
     if(isset($_POST['dangnhap'])) {
         // Thực hiện xử lý khi người dùng ấn nút submit và điền đầy đủ thông tin
@@ -27,7 +27,7 @@ session_start();
                 header('location:../index.php');
             }
         } else {
-            echo 'Email hoặc mật khẩu không đúng';
+            echo "<script>alert('Email hoặc mật khẩu không đúng. Vui lòng thử lại.'); window.location.href='login.php'</script>";
         }
     }
    
@@ -48,7 +48,7 @@ session_start();
         <input type="password" name="password" required placeholder="nhập mật khẩu">
         <input type="submit" name="dangnhap" value="Đăng nhập" class="btn">
         <p>Bạn chưa có tài khoản? <a href="register.php">Đăng ký</a></p>
-        <a href="quenpass.php" style="color:red;font-size:20px;">Quên mật khẩu</a>
+        <a href="quenpass.php" style="color:red;font-size:20px">Quên mật khẩu</a>
     </form>
   </div>  
 </body>
