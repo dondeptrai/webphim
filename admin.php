@@ -14,7 +14,7 @@
     // Kiểm tra xem người dùng đã đăng nhập chưa và có phải là admin không
     if (!isset($_SESSION['user_name']) || $_SESSION['user_type'] !== 'admin') {
         // Nếu chưa đăng nhập hoặc không phải là admin, chuyển hướng về trang đăng nhập
-        header('location: login.php');
+        header('location: view/login.php');
         exit(); // Đảm bảo kết thúc quá trình thực thi sau khi chuyển hướng
     }
 
@@ -24,8 +24,7 @@
     <div class="admin">
         <li><a href="admin.php" style="color:white;text-decoration:none">Trang chủ</a></li>
         <li><a href="admin.php?pid=2" style="color:white;text-decoration:none">Quản lý phim</a></li>
-        <li><a href=""style="color:white;text-decoration:none">Thành viên admin</a></li>
-        <li><a href=""style="color:white;text-decoration:none">Người đăng nhập</a></li>
+        <li><a href="admin.php?pid=8"style="color:white;text-decoration:none">Người đăng nhập</a></li>
         <li><a href="view/logout.php"style="color:white;text-decoration:none"> Đăng xuất</a></li>
     </div>
     <div class="dsphim">
@@ -49,6 +48,9 @@
                         break;
                     case 7:
                         include("view/logout.php");
+                        break;
+                    case 8:
+                        include("admin/qliusers.php");
                         break;
                 }
             }
