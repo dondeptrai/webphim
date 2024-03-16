@@ -1,5 +1,4 @@
 <?php   
-    session_start();
     @include 'config.php';
     if(isset($_POST['dangnhap'])) {
         // Thực hiện xử lý khi người dùng ấn nút submit và điền đầy đủ thông tin
