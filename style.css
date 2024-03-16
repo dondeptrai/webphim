@@ -432,8 +432,8 @@ li:hover{
   cursor: pointer;
 }
 .container .btn {
-    font-family: Arial, sans-serif; /* Example font family */
-    font-size: 16px; 
+    font-family: Arial, sans-serif; 
+    font-size: 60px; 
     font-weight: bold;
     color: green;
 }
