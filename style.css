@@ -480,3 +480,73 @@ li:hover{
 .container .list-group-item a {
     color: #ff0000;
 }
+.capnhat{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 60px;
+    background: #22254b;
+}
+.capnhat form{
+  padding: 30px;
+  border-radius: 2px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background: #4d6e8f;
+  text-align: center;
+}
+
+.capnhat form h3{
+  font-size: 25px;
+  text-transform: uppercase;
+  color:ghostwhite;
+}
+
+.capnhat form input{
+  width: 100%;
+  padding: 8px 0;
+  background: #eee;
+}
+.capnhat form .btn{
+  color: black;
+  text-transform: capitalize;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+
+.pass{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  padding-bottom: 60px;
+  background: #22254b;
+}
+.pass form{
+padding: 30px;
+border-radius: 2px;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+background: #4d6e8f;
+text-align: center;
+}
+
+.pass form h3{
+font-size: 25px;
+text-transform: uppercase;
+color:ghostwhite;
+}
+
+.pass form input{
+width: 100%;
+padding: 8px 0;
+background: #eee;
+}
+.pass form .btn{
+color: black;
+text-transform: capitalize;
+font-size: 15px;
+cursor: pointer;
+}
