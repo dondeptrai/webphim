@@ -6,7 +6,8 @@
 <br>
 <div>
     <h1 align="center"><b>Quản lý phim</b></h1>
-    <a href="admin.php?pid=3"><b>Thêm phim</b></a>
+    <a href="admin.php?pid=3"style="color:white"><b>Thêm phim</b></a>
+    <br>
     <br>
     <div align="center">
     <table align="center" border="1" style="border-collapse:collapse;">
@@ -52,8 +53,8 @@
             <td ><img src="../../phim/img/<?php echo $row["hinhanh"];?>" style="height:80px"></td>
             <td ><iframe width="70" height="60" src="<?php echo $row["trailerlink"]?>"></iframe></td>
             <td ><iframe width="70" height="60" src="<?php echo $row["linkphim"]?>"></iframe></td>
-            <td><a href="admin.php?pid=6&id=<?php echo $row['maPhim'];?>">Sửa</a></td>
-            <td><a onclick="return confirm('Bạn có muốn xoá phim?')" href="admin.php?pid=5&id=<?php echo $row['maPhim']?>">Xóa</a></td>
+            <td><a href="admin.php?pid=6&id=<?php echo $row['maPhim'];?>" style="color:white">Sửa</a></td>
+            <td><a onclick="return confirm('Bạn có muốn xoá phim?')" href="admin.php?pid=5&id=<?php echo $row['maPhim']?>"style="color:white">Xóa</a></td>
             <td></td>
         </tr>
             <?php 
