@@ -1,65 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ADMIN</title>
+</head>
 <?php
-    $link= new mysqli("localhost","root","","webphim");
-    $sql="select * from phim order by maPhim desc";
-    $result=$link->query($sql);
+    session_start();
+    $conn = mysqli_connect('localhost', 'root', '', 'webphim');
+    mysqli_set_charset($conn, "utf8");
+
+    // Kiểm tra xem người dùng đã đăng nhập chưa và có phải là admin không
+    if (!isset($_SESSION['user_name']) || $_SESSION['user_type'] !== 'admin') {
+        // Nếu chưa đăng nhập hoặc không phải là admin, chuyển hướng về trang đăng nhập
+        header('location: view/login.php');
+        exit(); // Đảm bảo kết thúc quá trình thực thi sau khi chuyển hướng
+    }
+
+    // Tiếp tục với nội dung của trang admin.php sau khi đã đăng nhập là admin
 ?>
-<br>
-<div>
-    <h1 align="center"><b>Quản lý phim</b></h1>
-    <a href="admin.php?pid=3"style="color:white"><b>Thêm phim</b></a>
-    <br>
-    <br>
-    <div align="center">
-    <table align="center" border="1" style="border-collapse:collapse;">
-        <tr>
-            <th>Mã phim</th>
-            <th>Thể loại</th> 
-            <th>Tên phim</th>
-            <th>Quốc gia</th>
-            <th>Phân loại</th>
-            <th>Diễn viên</th>
-            <th>Năm</th>
-            <th>Thời lượng</th>
-            <th>Đánh giá</th>
-            <th>Nội dung</th>
-            <th>Ngôn ngữ</th>
-            <th>Hình ảnh</th>
-            <th>Trailer</th>
-            <th>Link phim</th>
-            <th>Sửa</th>
-            <th>Xóa</th>
-        </tr>
-        <?php
-            while($row=$result->fetch_assoc()){
-        ?> 
-        <tr align="center">
-        <?php
-            $phim=$row["MaTheloai"];
-            $sql1="select * from theloai where MaTheloai=$phim";
-            $result1=$link->query($sql1);
-            $row1=$result1->fetch_assoc();
-        ?>
-            <td><?php echo $row["maPhim"];?></td>
-            <td><?php echo $row1["tenTheloai"];?></td>
-            <td><?php echo $row["Ten"]?></td>
-            <td ><?php echo $row["Quoc_Gia"]?></td>
-            <td ><?php echo $row["Phan_Loai"]?></td>
-            <td ><?php echo $row["Dien_Vien"]?></td>
-            <td ><?php echo $row["Nam"]?></td>
-            <td ><?php echo $row["Thoi_Luong"]?></td>
-            <td ><?php echo $row["Danh_Gia"]?></td>
-            <td ><?php echo $row["Noi_Dung"]?></td>
-            <td ><?php echo $row["Ngon_Ngu"]?></td>
-            <td ><img src="../../phim/img/<?php echo $row["hinhanh"];?>" style="height:80px"></td>
-            <td ><iframe width="70" height="60" src="<?php echo $row["trailerlink"]?>"></iframe></td>
-            <td ><iframe width="70" height="60" src="<?php echo $row["linkphim"]?>"></iframe></td>
-            <td><a href="admin.php?pid=6&id=<?php echo $row['maPhim'];?>" style="color:white">Sửa</a></td>
-            <td><a onclick="return confirm('Bạn có muốn xoá phim?')" href="admin.php?pid=5&id=<?php echo $row['maPhim']?>"style="color:white">Xóa</a></td>
-            <td></td>
-        </tr>
-            <?php 
-            }
-            ?>
-    </table>
+<body class="body1">
+    <div class="admin">
+        <li><a href="admin.php" style="color:white;text-decoration:none">Trang chủ</a></li>
+        <li><a href="admin.php?pid=2" style="color:white;text-decoration:none">Quản lý phim</a></li>
+        <li><a href="admin.php?pid=8"style="color:white;text-decoration:none">Người đăng nhập</a></li>
+        <li><a href="view/logout.php"style="color:white;text-decoration:none"> Đăng xuất</a></li>
     </div>
-</div>
+    <div class="dsphim">
+        <?php
+            if(isset($_GET['pid'])){
+                switch($_GET['pid']){
+                    case 2:
+                        include("admin/qliphim.php");
+                        break;
+                    case 3:
+                        include("admin/view_themphim.php");
+                        break;
+                    case 4:
+                        include("admin/ctrl_themphim.php");
+                        break;
+                    case 5:
+                        include("admin/xoaphim.php");
+                        break;
+                    case 6: 
+                        include("admin/sua_phim.php");
+                        break;
+                    case 7:
+                        include("view/logout.php");
+                        break;
+                    case 8:
+                        include("admin/qliusers.php");
+                        break;
+                }
+            }
+        ?>
+    </div>
+</body>
