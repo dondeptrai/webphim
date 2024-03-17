@@ -531,3 +531,48 @@ text-transform: capitalize;
 font-size: 15px;
 cursor: pointer;
 }
+
+.cmt{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  padding-bottom: 60px;
+  background: #22254b;
+}
+
+.cmt form{
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  text-align: left;
+  width: 100%;
+  color: #333;
+}
+
+.cmt table{
+  width: 100%;
+}
+
+.cmt thead{
+  font-size: small;
+
+}
+
+.cmt tr{
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  text-align: center;
+}
+
+.cmt td{
+  padding: 8px 0;
+  background: #eee;
+  text-align: center;  
+}
+
+
