@@ -35,7 +35,7 @@ if($result === false) {
             $row1=$result1->fetch_assoc();
             ?>
                 <td><?php echo $row1["user_type"]?></td>
-                <td><a onclick="return confirm('Bạn có muốn xóa?')" href="index.php?pid=7&id=<?php echo $row['id']?>"style="color:white">Xóa</a></td>
+                <td><a onclick="return confirm('Bạn có muốn xóa?')" href="admin.php?pid=8&id=<?php echo $row['id']?>"style="color:white">Xóa</a></td>
             </tr>
             <?php         
                 }
