@@ -25,6 +25,7 @@
         <li><a href="admin.php" style="color:white;text-decoration:none">Trang chủ</a></li>
         <li><a href="admin.php?pid=2" style="color:white;text-decoration:none">Quản lý phim</a></li>
         <li><a href="admin.php?pid=8"style="color:white;text-decoration:none">Người đăng nhập</a></li>
+        <li><a href="admin.php?pid=10"style="color:white;text-decoration:none">Quản lý bình luận</a></li>
         <li><a href="view/logout.php"style="color:white;text-decoration:none"> Đăng xuất</a></li>
     </div>
     <div class="dsphim">
