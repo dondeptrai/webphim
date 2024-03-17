@@ -5,7 +5,7 @@ if ($link->connect_error) {
     die("Kết nối database thất bại: " . $link->connect_error);
 }
 
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM users where user_type='user'";
 $result = $link->query($sql);
 
 if ($result === false) {
