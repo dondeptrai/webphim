@@ -52,6 +52,12 @@
                     case 8:
                         include("admin/qliusers.php");
                         break;
+                    case 9:
+                        include("admin/delcmt.php");
+                        break;
+                    case 10:
+                        include("admin/qlicmt.php");
+                        break;
                 }
             }
         ?>
