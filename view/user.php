@@ -11,8 +11,10 @@ if (!isset($_SESSION['user_name'])) {
 }else{ 
     ?>
         <div align="center"style="height:540px;padding-top:30px;color:white">
-            <h1>Hello: <?php echo $roww['name']?></h1>
-            <h3><b>User name:</b> <?php echo $roww['name']?></h3>
+            <h1>Xin chào: <?php echo $roww['name']?></h1>
+            <a href="index.php?pid=1011"style="font-size: 24px; color: white;" >Lịch sử xem phim</a>
+            <br>
+            <br>
             <a href="view/logout.php" style="color:red;font-size: 1.3rem;"><b>Đăng xuất</b></a>
             <br>
             <br>
