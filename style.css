@@ -388,6 +388,10 @@ li:hover{
   background: #22254b;
 }
 
+.c{
+	color: black;
+}
+
 .fx form{
   padding: 20px;
   border-radius: 5px;
