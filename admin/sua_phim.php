@@ -41,38 +41,38 @@ $row = mysqli_fetch_assoc($query);
                 <form method="post" action="">
                     <input type="hidden" name="id" value="<?php echo $row['maPhim']; ?>">
                     
-                    <label for="ten" >Tên phim:</label>
+                    <label class ="c" for="ten" >Tên phim:</label>
                     <input type="text" id="ten" name="ten" value="<?php echo $row['Ten']; ?>">
 
-                    <label for="quoc_gia">Quốc gia:</label>
+                    <label class ="c" for="quoc_gia">Quốc gia:</label>
                     <input type="text" id="quoc_gia" name="quoc_gia" value="<?php echo $row['Quoc_Gia']; ?>">
 
-                    <label for="phan_loai">Phân loại:</label>
+                    <label class ="c" for="phan_loai">Phân loại:</label>
                     <input type="text" id="phan_loai" name="phan_loai" value="<?php echo $row['Phan_Loai']; ?>">
 
-                    <label for="dien_vien">Diễn viên:</label>
+                    <label class ="c" for="dien_vien">Diễn viên:</label>
                     <input type="text" id="dien_vien" name="dien_vien" value="<?php echo $row['Dien_Vien']; ?>">
 
-                    <label for="nam">Năm:</label>
+                    <label class ="c" for="nam">Năm:</label>
                     <input type="text" id="nam" name="nam" value="<?php echo $row['Nam']; ?>">
 
-                    <label for="thoi_luong">Thời lượng:</label>
+                    <label class ="c" for="thoi_luong">Thời lượng:</label>
                     <input type="text" id="thoi_luong" name="thoi_luong" value="<?php echo $row['Thoi_Luong']; ?>">
 
-                    <label for="danh_gia">Đánh giá:</label>
+                    <label class ="c" for="danh_gia">Đánh giá:</label>
                     <input type="text" id="danh_gia" name="danh_gia" value="<?php echo $row['Danh_Gia']; ?>">
 
-                    <label for="noi_dung">Nội dung:</label><br>
+                    <label class ="c" for="noi_dung">Nội dung:</label><br>
                     <textarea id="noi_dung" name="noi_dung"><?php echo $row['Noi_Dung']; ?></textarea><br>
 
-                    <label for="ngon_ngu">Ngôn ngữ:</label><br>
+                    <label class ="c" for="ngon_ngu">Ngôn ngữ:</label><br>
                     <input type="text" id="ngon_ngu" name="ngon_ngu" value="<?php echo $row['Ngon_Ngu']; ?>"><br>
 
-                    <label for="hinhanh">Hình ảnh:</label><br>
+                    <label class ="c" for="hinhanh">Hình ảnh:</label><br>
                     <img<img src="../../phim/img/<?php echo $row["hinhanh"];?>" style="height:90px">
                     <input type="file" id="hinhanh" name="hinhanh" value="<?php echo $row['hinhanh']; ?>"><br>
 
-                    <label for="trailerlink">Trailer link:</label><br>
+                    <label class ="c" for="trailerlink">Trailer link:</label><br>
                     <input type="text" id="trailerlink" name="trailerlink" value="<?php echo $row['trailerlink']; ?>"><br>
                     
                     <br>
