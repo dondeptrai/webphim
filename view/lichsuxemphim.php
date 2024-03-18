@@ -83,7 +83,7 @@ $link->close();
     .phim1 p {
         margin: 5px 0;
         font-size: 14px;
-        color: #666;
+        color: white;
     }
 
     .phim1 iframe {
