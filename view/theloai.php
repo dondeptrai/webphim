@@ -18,3 +18,10 @@
 <?php
     }
 ?>
+<div class="tag">
+    <a href="index.php?pid=1002">Phim Bộ</a>
+</div>
+
+<div class="tag">
+    <a href="index.php?pid=1002">Phim Lẻ</a>
+</div>
