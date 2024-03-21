@@ -36,8 +36,13 @@
         <td><input type="text" name="Quoc_Gia"></td>
     </tr>
     <tr>
-        <td>Phân loại</td>
-        <td><input type="text" name="Phan_Loai"></td>
+    <td>Phân loại</td>
+    <td>
+        <select name="Phan_Loai">
+            <option value="Phim bộ">Phim bộ</option>
+            <option value="Phim lẻ">Phim lẻ</option>
+        </select>
+    </td>
     </tr>
     <tr>
         <td>Diễn viên</td>
