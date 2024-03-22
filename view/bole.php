@@ -10,7 +10,6 @@
 
 <div>
     <?php
-        // Hiển thị danh sách phim
         while ($row = $result->fetch_assoc()) {
     ?>
     <div class="main" style="float:left">
