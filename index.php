@@ -62,6 +62,9 @@
             case 1013:
                 include("view/doipass.php");
                 break;
+            case 1014:
+                include("view/bole.php");
+                break;
         }
     } else {
         include("view/pagination.php");
