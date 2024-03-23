@@ -47,7 +47,7 @@ $row = mysqli_fetch_assoc($query);
                     <label class ="c" for="quoc_gia">Quốc gia:</label>
                     <input type="text" id="quoc_gia" name="quoc_gia" value="<?php echo $row['Quoc_Gia']; ?>">
 
-                    <label for="phan_loai">Phân loại:</label>
+                    <label class ="c" for="phan_loai">Phân loại:</label>
                     <select id="phan_loai" name="phan_loai">
                     <option value="Phim bộ" <?php if($row['Phan_Loai'] == "Phim bộ") echo "selected"; ?>>Phim bộ</option>
                     <option value="Phim lẻ" <?php if($row['Phan_Loai'] == "Phim lẻ") echo "selected"; ?>>Phim lẻ</option>
