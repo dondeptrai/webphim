@@ -10,7 +10,7 @@
     while ($row=$result->fetch_assoc())
     {
     ?>
-        <div class="main" style="float:left">
+         <div  align="center" class="main" style="float:left; margin-left: 60px;" >
             <div class="movie">
             <a href="index.php?pid=1001&id=<?php echo $row["maPhim"]?>" style="text-decoration:none;color:black">
                 <img src="img/<?php echo $row["hinhanh"]?> "style="width:220px;height:310px">
