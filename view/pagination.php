@@ -34,7 +34,7 @@ $total_pages = ceil($total_movies / $per_page);
         $result1=$sql1->fetch_array();
         $avg = $result1['avg'];
     ?>
-         <div  align="center" class="main" style="float:left; margin-left: 60px;" >
+         <div  align="center" class="main" style="float:left" >
             <div class="movie">
                 <a href="index.php?pid=1001&id=<?php echo $row["maPhim"] ?>" style="text-decoration:none;color:black">
                     <img src="img/<?php echo $row["hinhanh"] ?>" style="width:220px;height:310px">
