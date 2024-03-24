@@ -19,7 +19,11 @@
     <br>    
     <div align="center">
         <?php include("view/theloai.php"); ?>
-    </div>
+        <?php
+   if(!isset($_GET['pid'])) {
+    include("view/phimnoibat.php");
+   }
+  ?>
     <?php
     if(isset($_GET['pid'])) {
         switch($_GET['pid']) {
@@ -68,6 +72,7 @@
         }
     } else {
         include("view/pagination.php");
+
     }
     ?>
     <script src="script.js"></script>

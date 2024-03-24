@@ -1,3 +1,4 @@
+
 <div>
     <?php
         $id=$_GET['id'];
@@ -5,6 +6,7 @@
         $sql="select * from phim where MaTheloai=$id";
         $result=$link->query($sql);
     ?>
+
     <?php 
 
     while ($row=$result->fetch_assoc())
