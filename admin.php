@@ -21,13 +21,9 @@
     // Tiếp tục với nội dung của trang admin.php sau khi đã đăng nhập là admin
 ?>
 <body class="body1">
-    <div class="admin">
-        <li><a href="admin.php" style="color:white;text-decoration:none">Trang chủ</a></li>
-        <li><a href="admin.php?pid=2" style="color:white;text-decoration:none">Quản lý phim</a></li>
-        <li><a href="admin.php?pid=8"style="color:white;text-decoration:none">Người đăng nhập</a></li>
-        <li><a href="admin.php?pid=10"style="color:white;text-decoration:none">Quản lý bình luận</a></li>
-        <li><a href="view/logout.php"style="color:white;text-decoration:none"> Đăng xuất</a></li>
-    </div>
+    
+    <?php include("admin/header.php")?>
+
     <div class="dsphim">
         <?php
             if(isset($_GET['pid'])){

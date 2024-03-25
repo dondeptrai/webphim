@@ -5,14 +5,15 @@
     $row=$result->fetch_assoc();
 ?>
 
-<h1 align="center"><b>Quản lý phim</b></h1>
+<h1 align="center" style="color: white;"><b>Thêm phim</b></h1>
+<div class="up">
 <form action="admin.php?pid=4" method="post" enctype="multipart/form-data">
-    <table align="center" border="1" style="border-collapse:collapse;">
-    <tr>
+    <!-- <table align="center" border="1" style="border-collapse:collapse;"> -->
+    <!-- <tr>
         <td>Mã phim</td>
         <td><input type="text" name="maPhim"></td>
-    </tr>
-    <tr>
+    </tr> -->
+    <tr style="color: black">
         <td>Thể loại</td>
         <td>
             <select name="maTheloai">
@@ -27,6 +28,7 @@
             </select>
         </td>
     </tr>
+    <br>
     <tr>
         <td>Tên phim</td>
         <td><input type="text" name="Ten"></td>
@@ -43,6 +45,7 @@
             <option value="Phim lẻ">Phim lẻ</option>
         </select>
     </td>
+    <br>
     </tr>
     <tr>
         <td>Diễn viên</td>
@@ -81,9 +84,10 @@
         <td><input type="text" name="linkphim"></td>
     </tr>
     <tr>
-        <td colspan="2" align="center"><input type="submit" value="Lưu"></td>
+        <td colspan="2" align="center"><input type="submit" value="Lưu" class="btn"></td>
         
     </tr>
 
-    </table>
+    <!-- </table> -->
 </form>
+</div>

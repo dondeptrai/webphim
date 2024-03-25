@@ -27,7 +27,7 @@ if (isset($_GET['id'])) {
 <div align="center">
     <br>
     <div>
-        <h1> Quản lý Users</h1>
+        <h1 style="color: white;"> Quản lý Users</h1>
         <table align="center" border="1" style="width:1000px; padding: 8px; border-collapse: collapse;">
             <tr style="background-color:gray" align="center">
                 <th>ID</th>

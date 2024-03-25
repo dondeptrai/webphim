@@ -37,3 +37,5 @@ document.addEventListener('DOMContentLoaded', function () {
         stars.forEach(star => star.classList.remove('active'));
     }
 });
+
+

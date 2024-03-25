@@ -13,14 +13,15 @@
         $result = mysqli_query($conn, $check_query);
 
         if(mysqli_num_rows($result) > 0) {
-            echo "<script>alert('Địa chỉ email đã tồn tại. Vui lòng chọn địa chỉ email khác.'); window.location.href='register.php'</script>";
+            echo "<script>alert('Địa chỉ email đã tồn tại. Vui lòng chọn địa chỉ email khác.'); window.location.href='index.php#show-modal'</script>";
         } elseif($pass != $cpass) {
-            echo "<script>alert('Mật khẩu nhập lại không trùng khớp.'); window.location.href='register.php'</script>";
+            echo "<script>alert('Mật khẩu nhập lại không trùng khớp.'); window.location.href='index.php#show-modal'</script>";
         }else {
             // Nếu tài khoản chưa tồn tại, thực hiện thêm vào cơ sở dữ liệu
             $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$pass')";
             if (mysqli_query($conn, $sql)) {
                 header('Location:../index.php');
+                exit();
             } else {
                 echo 'Lỗi: ' . $conn->error;
             }
@@ -29,7 +30,7 @@
 ?>
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -52,4 +53,4 @@
         
 
 </body>
-</html>
+</html> -->

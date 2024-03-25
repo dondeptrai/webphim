@@ -35,7 +35,7 @@ $row = mysqli_fetch_assoc($query);
         // Hiển thị form chỉnh sửa thông tin phim
 ?>
 
-            <h2 style="color:aliceblue;">Chỉnh sửa thông tin phim</h2>
+            <h1 align="center" style="color:aliceblue;" >Chỉnh sửa thông tin phim</h1>
             <div class ="fx">
 
                 <form method="post" action="">
@@ -47,7 +47,7 @@ $row = mysqli_fetch_assoc($query);
                     <label class ="c" for="quoc_gia">Quốc gia:</label>
                     <input type="text" id="quoc_gia" name="quoc_gia" value="<?php echo $row['Quoc_Gia']; ?>">
 
-                    <label class='c' for="phan_loai">Phân loại:</label>
+                    <label class="c" for="phan_loai">Phân loại:</label>
                     <select id="phan_loai" name="phan_loai" style="font-size: 1.2em; margin-bottom: 10px;margin-top: 10px;">
                     <option value="Phim bộ" <?php if($row['Phan_Loai'] == "Phim bộ") echo "selected"; ?>>Phim bộ</option>
                     <option value="Phim lẻ" <?php if($row['Phan_Loai'] == "Phim lẻ") echo "selected"; ?>>Phim lẻ</option>

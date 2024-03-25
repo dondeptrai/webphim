@@ -4,30 +4,29 @@
     $result=$link->query($sql);
 ?>
 <br>
-<div>
-    <h1 align="center"><b>Quản lý phim</b></h1>
+<!-- <div> -->
+    <h1 align="center" style="color:white"><b>Quản lý phim</b></h1>
     <a href="admin.php?pid=3"style="color:white"><b>Thêm phim</b></a>
     <br>
     <br>
-    <div align="center">
+    <div align="center" class="film">
     <table align="center" border="1" style="border-collapse:collapse;">
-        <tr>
-            <th>Mã phim</th>
-            <th>Thể loại</th> 
+        <tr class="film_head">
+            <th class="vg">Mã phim</th>
+            <th class="vg">Thể loại</th> 
             <th>Tên phim</th>
-            <th>Quốc gia</th>
-            <th>Phân loại</th>
+            <th class="vg">Quốc gia</th>
+            <th class="vg">Phân loại</th>
             <th>Diễn viên</th>
-            <th>Năm</th>
-            <th>Thời lượng</th>
-            <th>Đánh giá</th>
+            <th class="vg">Năm</th>
+            <th class="vg">Thời lượng</th>
+            <th class="vg">Đánh giá</th>
             <th>Nội dung</th>
-            <th>Ngôn ngữ</th>
-            <th>Hình ảnh</th>
-            <th>Trailer</th>
-            <th>Link phim</th>
-            <th>Sửa</th>
-            <th>Xóa</th>
+            <th class="vg">Ngôn ngữ</th>
+            <th class="hcn">Hình ảnh</th>
+            <th class="hcn">Trailer</th>
+            <th class="hcn">Link phim</th>
+            <th class="vg">Sửa Xóa</th>
         </tr>
         <?php
             while($row=$result->fetch_assoc()){
@@ -53,13 +52,14 @@
             <td ><img src="../../phim/img/<?php echo $row["hinhanh"];?>" style="height:80px"></td>
             <td ><iframe width="70" height="60" src="<?php echo $row["trailerlink"]?>"></iframe></td>
             <td ><iframe width="70" height="60" src="<?php echo $row["linkphim"]?>"></iframe></td>
-            <td><a href="admin.php?pid=6&id=<?php echo $row['maPhim'];?>" style="color:white">Sửa</a></td>
-            <td><a onclick="return confirm('Bạn có muốn xoá phim?')" href="admin.php?pid=5&id=<?php echo $row['maPhim']?>"style="color:white">Xóa</a></td>
-            <td></td>
+            <td>
+                <a style="color:blue; font-size: 1rem" href="admin.php?pid=6&id=<?php echo $row['maPhim'];?>" style="color:white">Sửa</a> <a style="color: blue; font-size: 1rem;" onclick="return confirm('Bạn có muốn xoá phim?')" href="admin.php?pid=5&id=<?php echo $row['maPhim']?>"style="color:white">Xóa</a>
+            </td>
+            <!-- <td><a style="color: blue;" onclick="return confirm('Bạn có muốn xoá phim?')" href="admin.php?pid=5&id=<?php echo $row['maPhim']?>"style="color:white">Xóa</a></td> -->
         </tr>
             <?php 
             }
             ?>
     </table>
     </div>
-</div>
+<!-- </div> -->
