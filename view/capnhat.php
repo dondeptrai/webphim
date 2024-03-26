@@ -17,14 +17,14 @@ if (!isset($_SESSION['user_name'])) {
 
             $sql_update = "UPDATE `users` SET `name`='$ten',`email`='$email' WHERE id=$id;";
             if ($link->query($sql_update) === TRUE) {
-                echo "<script>alert('Cập nhật thành công'); window.location.href='../index.php?pid=1008'</script>";
+                echo "<script>alert('Cập nhật thành công'); window.location.href='../index.php'</script>";
                 exit();
             } else {
                 echo "Lỗi: " . $link->error;
             }
         }
     } else {
-        echo "<script>alert('Bạn không có quyền cập nhật'); window.location.href='../index.php?pid=1008'</script>";
+        echo "<script>alert('Bạn không có quyền cập nhật'); window.location.href='../index.php'</script>";
         exit();
     }
 }
