@@ -25,11 +25,15 @@
             <th class="vg">Ngôn ngữ</th>
             <th class="hcn">Hình ảnh</th>
             <th class="hcn">Trailer</th>
-            <th class="hcn">Link phim</th>
+            <th class="hcn">Phim</th>
             <th class="vg">Sửa Xóa</th>
         </tr>
         <?php
             while($row=$result->fetch_assoc()){
+                $id=$row['maPhim'];
+                $sql1 = $link -> query(query:"SELECT AVG(rating) AS avg FROM ratings WHERE id_product='$id'");
+                $result1=$sql1->fetch_array();
+                $avg = $result1['avg'];
         ?> 
         <tr align="center">
         <?php
@@ -46,16 +50,16 @@
             <td ><?php echo $row["Dien_Vien"]?></td>
             <td ><?php echo $row["Nam"]?></td>
             <td ><?php echo $row["Thoi_Luong"]?></td>
-            <td ><?php echo $row["Danh_Gia"]?></td>
+            <td class="green star"><?php echo round($avg, precision:2)?> &#9733;</td>
             <td ><?php echo $row["Noi_Dung"]?></td>
             <td ><?php echo $row["Ngon_Ngu"]?></td>
             <td ><img src="../../phim/img/<?php echo $row["hinhanh"];?>" style="height:80px"></td>
             <td ><iframe width="70" height="60" src="<?php echo $row["trailerlink"]?>"></iframe></td>
             <td ><iframe width="70" height="60" src="<?php echo $row["linkphim"]?>"></iframe></td>
             <td>
-                <a style="color:blue; font-size: 1rem" href="admin.php?pid=6&id=<?php echo $row['maPhim'];?>" style="color:white">Sửa</a> <a style="color: blue; font-size: 1rem;" onclick="return confirm('Bạn có muốn xoá phim?')" href="admin.php?pid=5&id=<?php echo $row['maPhim']?>"style="color:white">Xóa</a>
+                <a style="color:blue; font-size: 1rem" href="admin.php?pid=6&id=<?php echo $row['maPhim'];?>" style="color:white">Sửa</a> 
+                <a style="color: blue; font-size: 1rem;" onclick="return confirm('Bạn có muốn xoá phim?')" href="admin.php?pid=5&id=<?php echo $row['maPhim']?>"style="color:white">Xóa</a>
             </td>
-            <!-- <td><a style="color: blue;" onclick="return confirm('Bạn có muốn xoá phim?')" href="admin.php?pid=5&id=<?php echo $row['maPhim']?>"style="color:white">Xóa</a></td> -->
         </tr>
             <?php 
             }
