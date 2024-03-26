@@ -66,24 +66,26 @@ $link->close();
     }
 
     .phim1 {
+        color: black;
         flex: 0 1 calc(25% - 70px);
         margin-bottom: 20px;
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        background-color: white;
     }
 
     .phim1 h4 {
         margin-top: 0;
         font-size: 18px;
-        color: white;
+        /* color: white; */
     }
 
     .phim1 p {
         margin: 5px 0;
         font-size: 14px;
-        color: white;
+        /* color: white; */
     }
 
     .phim1 iframe {
