@@ -29,7 +29,7 @@ if (isset($_GET['id'])) {
     <div>
         <h1 style="color: white;"> Quản lý Users</h1>
         <table align="center" border="1" style="width:1000px; padding: 8px; border-collapse: collapse;">
-            <tr style="background-color:gray" align="center">
+            <tr style="background-color:white" align="center">
                 <th>ID</th>
                 <th>Tên</th>
                 <th>Email</th>
@@ -40,7 +40,7 @@ if (isset($_GET['id'])) {
             <?php
             while ($row = $result->fetch_assoc()) {
                 ?>
-                <tr align="center">
+                <tr align="center" style="color: white;">
                     <td><?php echo $row["id"] ?></td>
                     <td><?php echo $row["name"] ?></td>
                     <td><?php echo $row["email"] ?></td>
@@ -48,7 +48,7 @@ if (isset($_GET['id'])) {
                     <td><?php echo $row["user_type"] ?></td>
                     <td>
                         <a onclick="return confirm('Bạn có muốn xóa?')" 
-                           href="admin.php?pid=8&id=<?php echo $row['id'] ?>"style="color:white">Xóa</a>
+                           href="admin.php?pid=8&id=<?php echo $row['id'] ?>"style="color: pink">Xóa</a>
                     </td>
                 </tr>
             <?php
