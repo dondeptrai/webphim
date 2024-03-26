@@ -18,7 +18,7 @@
             </a>
             </div>
         </div>
-        <div class="mid">
+        <div class="mid" align="left">
             <h1><?php echo $row["Ten"]?></h1>
             <P><?php echo $row["Ten"]?> (<?php echo $row["Nam"]?>)</p>
             <p><b>Diễn viên: </b><?php echo $row["Dien_Vien"]?></p>
