@@ -8,9 +8,7 @@
                     </li>
 
                     <li class="index__sel-item">
-                        <a href="index.php?pid=1011" class="index_navbar-item-link"  >
-                            Lịch sử xem phim
-                        </a>
+                        <a href="index.php?pid=1011" class="index_navbar-item-link"><b>Lịch sử xem phim</b></a>
                     </li>
 
                     <li class="index__sel-item">
