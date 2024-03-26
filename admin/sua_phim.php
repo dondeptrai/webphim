@@ -14,7 +14,6 @@ $row = mysqli_fetch_assoc($query);
             $dien_vien = $_POST["dien_vien"];
             $nam = $_POST["nam"];
             $thoi_luong = $_POST["thoi_luong"];
-            $danh_gia = $_POST["danh_gia"];
             $noi_dung = $_POST["noi_dung"];
             $ngon_ngu = $_POST["ngon_ngu"];
             $hinhanh = $_POST["hinhanh"];
@@ -22,9 +21,9 @@ $row = mysqli_fetch_assoc($query);
 
             // Cập nhật thông tin phim trong CSDL
             //Thực thi câu truy vấn cập nhật thông tin phim vào cơ sở dữ liệu và kiểm tra xem có thành công hay không.
-            $sql_update = "UPDATE phim SET Ten='$ten', Quoc_Gia='$quoc_gia', Phan_Loai='$phan_loai', Dien_Vien='$dien_vien', Nam=$nam, Thoi_Luong='$thoi_luong', Danh_Gia=$danh_gia, Noi_Dung='$noi_dung', Ngon_Ngu='$ngon_ngu', hinhanh='$hinhanh', trailerlink='$trailerlink' WHERE maPhim = $id";
+            $sql_update = "UPDATE phim SET Ten='$ten', Quoc_Gia='$quoc_gia', Phan_Loai='$phan_loai', Dien_Vien='$dien_vien', Nam=$nam, Thoi_Luong='$thoi_luong', Noi_Dung='$noi_dung', Ngon_Ngu='$ngon_ngu', hinhanh='$hinhanh', trailerlink='$trailerlink' WHERE maPhim = $id";
             if ($link->query($sql_update) === TRUE) {
-                echo "Cập nhật thông tin thành công";
+                echo "<script>alert('Cập nhật phim thành công.'); window.location.href='admin.php?pid=2'</script>";    
                 // Redirect về trang chính hoặc trang danh sách phim
                 exit();
             } else {
@@ -62,9 +61,6 @@ $row = mysqli_fetch_assoc($query);
 
                     <label class ="c" for="thoi_luong">Thời lượng:</label>
                     <input type="text" id="thoi_luong" name="thoi_luong" value="<?php echo $row['Thoi_Luong']; ?>">
-
-                    <label class ="c" for="danh_gia">Đánh giá:</label>
-                    <input type="text" id="danh_gia" name="danh_gia" value="<?php echo $row['Danh_Gia']; ?>">
 
                     <label class ="c" for="noi_dung">Nội dung:</label><br>
                     <textarea id="noi_dung" name="noi_dung"><?php echo $row['Noi_Dung']; ?></textarea><br>
