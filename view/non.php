@@ -1,5 +1,5 @@
 
-<a href="#show-re"><img src="img/img2.jpg" style="height:45px;width:45px;padding-right:10px" id="btn-open"></a>
+<a href="#show-re"><img src="img/img2.jpg" style="height:45px;width:45px;padding-right:10px"></a>
             <!-- modal layout -->
             <div class="modal" id="show-re">
                 <a href="#" class="overlay-close"></a>
@@ -14,7 +14,7 @@
                             <div class="auth-form__header">
                                 <a class="btn-close" href="#">&times;</a>
                                 <h3 class="auth-form__heading">Đăng ký</h3>
-                                <span class="auth-form__switch-btn">Đăng nhập</span> 
+                                <a href="#show-log"><span class="auth-form__switch-btn">Đăng nhập</span></a> 
                             </div>
 
                             <div class="auth-form__form">
@@ -62,7 +62,7 @@
                             <div class="auth-form__header">
                             <a class="btn-close" href="#">&times;</a>
                                 <h3 class="auth-form__heading">Đăng nhập</h3>
-                                <span class="auth-form__switch-btn">Đăng ký</span> 
+                                <a href="#show-re"><span class="auth-form__switch-btn">Đăng ký</span></a>
                             </div>
 
                             <div class="auth-form__form">
