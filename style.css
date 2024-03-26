@@ -773,14 +773,12 @@ li:hover{
   text-align: left;
   width: 100%;
   font-size: 0.8rem;
-  color: #22254b;
 }
 
 .film_head{
-  background: #22254b;
   font-size: 1rem;
   text-align: center;
-  color: #ccc;
+  color: black;
 }
 
 .nut{
@@ -805,7 +803,6 @@ li:hover{
   justify-content: center;
   padding: 20px;
   padding-bottom: 60px;
-  background: #22254b;
 }
 
 .fx .c{
@@ -987,7 +984,6 @@ cursor: pointer;
   justify-content: center;
   padding: 20px;
   padding-bottom: 60px;
-  background: #22254b;
 }
 
 .up form{
@@ -1027,7 +1023,6 @@ cursor: pointer;
   justify-content: center;
   padding: 20px;
   padding-bottom: 60px;
-  background: #22254b;
 }
 
 .cmt form{
