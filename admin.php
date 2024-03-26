@@ -56,6 +56,8 @@
                         include("admin/qlicmt.php");
                         break;
                 }
+            }else{
+                include("admin/qliphim.php");
             }
         ?>
     </div>
