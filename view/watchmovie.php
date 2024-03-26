@@ -86,7 +86,13 @@ if ($result->num_rows > 0) {
                     $sql = "select * from phim where maTheloai=$phim limit 0,4";
                     $result = $link->query($sql);
                     ?>
-                    <?php while ($row = $result->fetch_assoc()) { ?>
+                    <?php while ($row = $result->fetch_assoc()) 
+                    {
+                        $id=$row['maPhim'];
+                        $sql1 = $link -> query(query:"SELECT AVG(rating) AS avg FROM ratings WHERE id_product='$id'");
+                        $result1=$sql1->fetch_array();
+                        $avg = $result1['avg'];
+                    ?>
                         <a href="index.php?pid=1001&id=<?php echo $row["maPhim"] ?>" style="text-decoration:none;color:white;">
                             <div class="phimtuongtu">
                                 <div>
@@ -95,7 +101,7 @@ if ($result->num_rows > 0) {
                                 <div align="left" style="flex-basis:60%;padding-left:10px">
                                     <span><b><?php echo $row["Ten"] ?></b></span>
                                     <br>
-                                    <span class="green star"><?php echo $row["Danh_Gia"] ?> &#9733;</span>
+                                    <span class="green star"><?php echo round($avg, precision:2)?>&#9733;</span>
                                 </div>
                                 <br>
                             </div>
