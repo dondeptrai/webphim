@@ -5,9 +5,6 @@
                     <li class="header_navbar-item header_navbar-item--separate">
                         <a href="index.php" class="header_navbar-item-link"> Trang xem phim </a>
                     </li>
-                    <li class="header_navbar-item">
-                        <a href="admin.php" class="header_navbar-item-link"> Trang chủ </a>
-                    </li> 
                 </ul>
 
                 <ul class="header_navbar-list">
