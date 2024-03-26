@@ -183,6 +183,7 @@
     justify-content: space-between; 
     align-items: center; 
     background-color: var(--secondary-color);
+    color:white;
 }
 
 .index_navbar{
