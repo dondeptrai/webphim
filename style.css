@@ -240,12 +240,11 @@
 .index_navbar-item--has-sel:hover .index__sel{
   display: block;
 }
-
 /* unon.php */
 
 .index__sel{
   position: absolute;
-  top: 118%;
+  /* top: 118%; */
   right: 0;
   width: 200px;
   /* border: 1px solid #D3D3D3; */
@@ -293,6 +292,7 @@
 }
 
 /* phimnoibat.php */
+
 
 
 .search {
@@ -674,7 +674,7 @@ main{
 
 .header__qli{
   position: absolute;
-  top: 118%;
+  /* top: 118%; */
   right: 0;
   width: 200px;
   /* border: 1px solid #D3D3D3; */
@@ -737,7 +737,7 @@ main{
 }
 
 li:hover{
-  background-color: rgb(124, 217, 229);
+  background-color: var(--secondary-color);
 }
 .body1{
   background-color:rgb(47, 43, 43);
@@ -1063,4 +1063,9 @@ cursor: pointer;
   text-align: center;  
 }
 
-
+.top-rated-movies{
+  float: right;  
+  width: 270px; 
+  color:white;
+  background-color: var(--primary-color);
+}
