@@ -60,10 +60,6 @@
         <td><input type="text" name="Thoi_Luong"></td>
     </tr>
     <tr>
-        <td>Đánh giá</td>
-        <td><input type="text" name="Danh_Gia"></td>
-    </tr>
-    <tr>
         <td>Nội dung</td>
         <td><input type="text" name="Noi_Dung"></td>
     </tr>
