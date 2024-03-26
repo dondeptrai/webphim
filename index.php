@@ -46,9 +46,6 @@
                     case 1006:
                         include("view/logout.php");
                         break;
-                    case 1008:
-                        include("view/user.php");
-                        break;
                     case 1009:
                         include("view/pagination.php");
                         break;
