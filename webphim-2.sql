@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 26, 2024 lúc 08:44 AM
+-- Thời gian đã tạo: Th3 28, 2024 lúc 04:49 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.0.30
 
@@ -44,7 +44,7 @@ CREATE TABLE `comment` (
 CREATE TABLE `lichsuxemphim` (
   `malichsu` int(11) NOT NULL,
   `id` int(11) NOT NULL,
-  `idPhim` int(11) NOT NULL,
+  `maPhim` int(11) NOT NULL,
   `thoigian` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -52,7 +52,7 @@ CREATE TABLE `lichsuxemphim` (
 -- Đang đổ dữ liệu cho bảng `lichsuxemphim`
 --
 
-INSERT INTO `lichsuxemphim` (`malichsu`, `id`, `idPhim`, `thoigian`) VALUES
+INSERT INTO `lichsuxemphim` (`malichsu`, `id`, `maPhim`, `thoigian`) VALUES
 (1, 10, 1, '2024-03-13 06:17:21'),
 (4, 10, 6, '2024-03-13 06:24:15'),
 (5, 10, 5, '2024-03-13 06:23:02'),
@@ -62,7 +62,8 @@ INSERT INTO `lichsuxemphim` (`malichsu`, `id`, `idPhim`, `thoigian`) VALUES
 (9, 13, 1, '2024-03-18 00:33:20'),
 (10, 13, 20, '2024-03-25 10:19:47'),
 (11, 13, 12, '2024-03-25 10:47:59'),
-(12, 1, 3, '2024-03-25 11:50:14');
+(12, 1, 3, '2024-03-25 11:50:14'),
+(13, 13, 5, '2024-03-26 02:50:44');
 
 -- --------------------------------------------------------
 
@@ -189,7 +190,9 @@ INSERT INTO `ratings` (`id`, `id_product`, `rating`) VALUES
 (62, 3, 1),
 (63, 1, 10),
 (64, 12, 9),
-(65, 27, 10);
+(65, 27, 10),
+(66, 24, 8),
+(67, 4, 10);
 
 -- --------------------------------------------------------
 
@@ -241,7 +244,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_type`) VALUES
 (10, 'dondeptrai', 'don123@gmail.com', '202cb962ac59075b964b07152d234b70', 'user'),
 (11, 'dona', 'dona@gmail.com', '202cb962ac59075b964b07152d234b70', 'user'),
 (12, 'Oanh', 'mydayoanhh@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'user'),
-(13, 'Lan Hương ', 'hoanghuong3011@gmail.com', '202cb962ac59075b964b07152d234b70', 'user');
+(13, 'Hương ', 'hoanghuong3011@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'user');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -299,19 +302,19 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT cho bảng `lichsuxemphim`
 --
 ALTER TABLE `lichsuxemphim`
-  MODIFY `malichsu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `malichsu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT cho bảng `phim`
 --
 ALTER TABLE `phim`
-  MODIFY `maPhim` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `maPhim` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT cho bảng `ratings`
 --
 ALTER TABLE `ratings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
