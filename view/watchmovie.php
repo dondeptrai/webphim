@@ -4,21 +4,21 @@
 
 if (isset($_GET['id']) && isset($_SESSION['user_id'])) {
     
-    $idPhim = $_GET['id'];
+    $maPhim = $_GET['id'];
     $idUser = $_SESSION['user_id'];
     $thoiGian = date("Y-m-d H:i:s");
 
     // Kiểm tra xem lịch sử xem phim đã tồn tại chưa
-    $sql_check = "SELECT * FROM lichsuxemphim WHERE idPhim = '$idPhim' AND id = '$idUser'";
+    $sql_check = "SELECT * FROM lichsuxemphim WHERE maPhim = '$maPhim' AND id = '$idUser'";
     $result_check = mysqli_query($conn, $sql_check);
 
     // Kiểm tra kết quả của truy vấn
     if ($result_check) {
         if (mysqli_num_rows($result_check) > 0) {
-            $sql_update = "UPDATE lichsuxemphim SET thoigian = '$thoiGian' WHERE idPhim = '$idPhim' AND id = '$idUser'";
+            $sql_update = "UPDATE lichsuxemphim SET thoigian = '$thoiGian' WHERE maPhim = '$maPhim' AND id = '$idUser'";
             $result_update = mysqli_query($conn, $sql_update);
         } else {
-            $sql_insert = "INSERT INTO lichsuxemphim (id, idPhim, thoigian) VALUES ('$idUser', '$idPhim', '$thoiGian')";
+            $sql_insert = "INSERT INTO lichsuxemphim (id, maPhim, thoigian) VALUES ('$idUser', '$maPhim', '$thoiGian')";
             $result_insert = mysqli_query($conn, $sql_insert);
         }
     } else {
