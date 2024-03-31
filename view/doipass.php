@@ -33,7 +33,7 @@ if(isset($_POST["submit"])) {
             // Cập nhật mật khẩu mới vào csdl
             $sql_update = "UPDATE users SET password='$hashed_password' WHERE id =$user_id";
             if ($link->query($sql_update) === TRUE) {
-                echo "<script>alert('Đổi mật khẩu thành công'); window.location.href='../index.php?pid=1008'</script>";
+                echo "<script>alert('Đổi mật khẩu thành công'); window.location.href='../index.php'</script>";
                 exit();
             } else {
                 echo "Lỗi: " . $link->error;
