@@ -3,7 +3,7 @@
     <?php
         $id=$_GET['id'];
         $link=new mysqli("localhost","root","","webphim");
-        $sql="select * from phim where MaTheloai=$id";
+        $sql="select * from phim where maTheloai=$id";
         $result=$link->query($sql);
     ?>
     <?php 
