@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 28, 2024 lúc 04:49 PM
+-- Thời gian đã tạo: Th3 30, 2024 lúc 06:12 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.0.30
 
@@ -35,6 +35,14 @@ CREATE TABLE `comment` (
   `article` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `comment`
+--
+
+INSERT INTO `comment` (`id_comment`, `id_product`, `id_user`, `date_comment`, `article`) VALUES
+(26, 25, 14, '2024-03-29 15:12:23', 'hi'),
+(27, 1, 14, '2024-03-29 17:18:44', 'phim hay');
+
 -- --------------------------------------------------------
 
 --
@@ -63,7 +71,14 @@ INSERT INTO `lichsuxemphim` (`malichsu`, `id`, `maPhim`, `thoigian`) VALUES
 (10, 13, 20, '2024-03-25 10:19:47'),
 (11, 13, 12, '2024-03-25 10:47:59'),
 (12, 1, 3, '2024-03-25 11:50:14'),
-(13, 13, 5, '2024-03-26 02:50:44');
+(13, 13, 5, '2024-03-26 02:50:44'),
+(14, 0, 0, '2024-03-29 01:56:12'),
+(15, 14, 20, '2024-03-29 01:59:19'),
+(16, 14, 4, '2024-03-29 02:00:28'),
+(17, 14, 3, '2024-03-29 04:31:08'),
+(18, 14, 25, '2024-03-29 02:12:23'),
+(19, 14, 2, '2024-03-29 04:31:16'),
+(20, 14, 1, '2024-03-29 04:18:44');
 
 -- --------------------------------------------------------
 
@@ -75,7 +90,7 @@ CREATE TABLE `phim` (
   `maPhim` int(11) NOT NULL,
   `Ten` varchar(300) NOT NULL,
   `Quoc_Gia` varchar(100) NOT NULL,
-  `MaTheloai` int(11) NOT NULL,
+  `maTheloai` int(11) NOT NULL,
   `Phan_Loai` varchar(100) DEFAULT NULL,
   `Dien_Vien` varchar(300) NOT NULL,
   `Nam` int(11) NOT NULL,
@@ -91,7 +106,7 @@ CREATE TABLE `phim` (
 -- Đang đổ dữ liệu cho bảng `phim`
 --
 
-INSERT INTO `phim` (`maPhim`, `Ten`, `Quoc_Gia`, `MaTheloai`, `Phan_Loai`, `Dien_Vien`, `Nam`, `Thoi_Luong`, `Noi_Dung`, `Ngon_Ngu`, `hinhanh`, `trailerlink`, `linkphim`) VALUES
+INSERT INTO `phim` (`maPhim`, `Ten`, `Quoc_Gia`, `maTheloai`, `Phan_Loai`, `Dien_Vien`, `Nam`, `Thoi_Luong`, `Noi_Dung`, `Ngon_Ngu`, `hinhanh`, `trailerlink`, `linkphim`) VALUES
 (1, 'MY DEMON', 'Hàn Quốc', 5, 'Phim bộ', 'Kim Yoo-jung, Song Kang, Lee Sang-yi', 2023, '16 tập', 'Loạt phim mô tả câu chuyện về một cuộc hôn nhân hợp đồng giữa Do Do-hee (Kim Yoo-jung),người thừa kế quỷ dữ của một tập đoàn, và Jeong Gu-won (Song Kang),một con quỷ tạm thời mất đi sức mạnh của mình. Sự mất mát nhất thời này mang lại cho họ hạnh phúc thoáng qua nhưng cuối cùng dẫn đến địa ngục', 'Phụ đề Tiếng Việt', 'mydemon.jpg', 'https://www.youtube.com/embed/D-bAfFqvxZg?si=FIcL25BZSXqRDAb0', 'https://mega.nz/embed/1mtgySCB#hLW7UrJ-32r5uItGcMwFGAya8kXbXKATRzTYBS-zDYg\n'),
 (2, 'NEVERTHELESS : DẪU BIẾT', 'Hàn Quốc', 5, 'Phim bộ', 'Han So-hee, Song Kang và Chae Jong-hyeop', 2021, '16 tập', 'Câu chuyện xoay quanh một cô gái bị cuốn hút bởi sự quyến rũ của bạn cùng trường nghệ thuật tài năng.Cô ấy luôn hoài nghi về tình yêu và không tin vào những mối quan hệ đầy cảm xúc. Tuy nhiên, dù do dự, cô ấy cuối cùng đã rơi vào một mối quan hệ thể xác chỉ là bạn bè. Nhưng liệu điều này có thực sự đơn giản như vậy hay không? Hãy cùng theo dõi câu chuyện này để khám phá những rối ren trong trái tim của nhân vật chính và những quyết định khó khăn mà cô ấy phải đối mặt.', 'Phụ đề Tiếng Việt', 'nevertheless.jpg', 'https://www.youtube.com/embed/0x8cJUD6MMo?si=MK3GsyijLG5JU5zy\r\n	\r\n', ''),
 (3, 'ALL OF US ARE DEAD', 'Hàn Quốc', 1, 'Phim bộ', 'Park Ji Hoon,Yoon Chan Young,Cho Yi Hyun', 2022, '12 tập', 'Bộ phim là một câu chuyện Một trường cấp ba trở thành điểm bùng phát virus thây ma. Các học sinh mắc kẹt phải nỗ lực thoát ra – hoặc biến thành một trong những người nhiễm bệnh hung tợn.', 'Phụ đề Tiếng Việt', 'allofus.jpg', 'https://www.youtube.com/embed/IN5TD4VRcSM?si=PV0_idzrixnfNph5', ''),
@@ -141,7 +156,8 @@ INSERT INTO `phim` (`maPhim`, `Ten`, `Quoc_Gia`, `MaTheloai`, `Phan_Loai`, `Dien
 (47, 'YÊU GIỮA VÙNG NƯỚC DỮ', 'Nhật Bản', 5, 'Phim lẻ', 'Yoshizawa Ryo, Miyazaki Aoi, Yoshida Yoh, Kikuchi Rinko, Nagayama Kento, Izumisawa Yuuki', 2023, '1 tiếng 55 phút', 'Yêu Giữa Vùng Nước Dữ kể về tình cảm, bí ẩn và hỗn loạn diễn ra trên con tàu sang trọng hướng tới biển Aegean khi một quản gia và một hành khách cố gắng phá giải vụ án mạng khó hiểu.', 'Phụ đề Tiếng Việt', 'water.jpg', 'https://www.youtube.com/embed/p1cnwTlVYK0', ''),
 (48, 'TÊN CẬU LÀ GÌ?', 'Nhật Bản', 6, 'Phim lẻ', 'Shinta Takagi, Tsukasa Fujii, Futaha Miyamizu', 2016, '1 tiếng 37 phút', 'Tên Cậu Là Gì - Your Name kể về Mitsuha – nữ sinh trung học sống ở một thị trấn nhỏ của vùng Itomori. Luôn chán chường với cuộc sống tẻ nhạt ở vùng thôn quê, Mitsuha ao ước kiếp sau được làm một anh chàng đẹp trai sống ở thủ đô Tokyo sôi động. Trong khi đó ở Tokyo, anh chàng Taki rất hài lòng với cuộc sống và công việc làm thêm ở một nhà hàng Italy sau giờ học. Tuy vậy, hằng đêm cậu vẫn mơ thấy mình trong cơ thể một cô gái thôn quê. Đến một hôm khi sự kiện nghìn năm có một là Sao Chổi tiến gần tới Trái đất, Taki và Mitsuha bỗng bị hoán đổi cơ thể.', 'Phụ đề Tiếng Việt', 'name.jpg', 'https://www.youtube.com/embed/_mifHzxFNQ4', ''),
 (49, 'CON MÈO TRỞ LẠI', 'Nhật Bản', 6, 'Phim lẻ', ' ', 2016, '76 phút', 'Phim Con Mèo Trở Lại được chuyển thể từ loạt manga cùng tên của Hiiragi Aoi. Cốt truyện xoay quanh Haru một nữ sinh trung học sau khi cô cứu được một chú mèo lạ khỏi bị xe tông, cô đã nhận được sự cảm kích của những chú mèo và sau đó cô được đưa đến vương quốc của loài mèo để trở thành vợ của thái tử. Cuộc phiêu lưu của Haru bắt đầu.', 'Phụ đề Tiếng Việt', 'cat.jpg', 'https://www.youtube.com/embed/Gp-H_YOcYTM', ''),
-(50, 'TÀU NGẦM SẮT MÀU ĐEN', 'Nhật Bản', 6, 'Phim lẻ', ' ', 2016, '1 tiếng 40 phút', 'Phim Điện Ảnh Thám Tử Lừng Danh Conan: Tàu Ngầm Sắt Màu Đen lấy bối cảnh tại Pacific Buoy - một trụ sở hàng hải của Interpol có nhiệm vụ kết nối các camera an ninh trên toàn thế giới. Nhóm của Conan, theo lời mời của Sonoko, cũng đến đảo Hachijo để xem cá voi. Tại đây, Conan nhận được thông tin về một nhân viên Europol bị ám sát. Cùng với đó, tính mạng Haibara bị đe dọa, phải chăng thân phận của cô đã bị bại lộ trước Gin...', 'Phụ đề Tiếng Việt', 'conan.jpg', 'https://www.youtube.com/embed/0bJXtdfb7hg', '');
+(50, 'TÀU NGẦM SẮT MÀU ĐEN', 'Nhật Bản', 6, 'Phim lẻ', ' ', 2016, '1 tiếng 40 phút', 'Phim Điện Ảnh Thám Tử Lừng Danh Conan: Tàu Ngầm Sắt Màu Đen lấy bối cảnh tại Pacific Buoy - một trụ sở hàng hải của Interpol có nhiệm vụ kết nối các camera an ninh trên toàn thế giới. Nhóm của Conan, theo lời mời của Sonoko, cũng đến đảo Hachijo để xem cá voi. Tại đây, Conan nhận được thông tin về một nhân viên Europol bị ám sát. Cùng với đó, tính mạng Haibara bị đe dọa, phải chăng thân phận của cô đã bị bại lộ trước Gin...', 'Phụ đề Tiếng Việt', 'conan.jpg', 'https://www.youtube.com/embed/0bJXtdfb7hg', ''),
+(56, '', '', 1, 'Phim bộ', '', 0, '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -192,7 +208,9 @@ INSERT INTO `ratings` (`id`, `id_product`, `rating`) VALUES
 (64, 12, 9),
 (65, 27, 10),
 (66, 24, 8),
-(67, 4, 10);
+(67, 4, 10),
+(68, 3, 10),
+(69, 9, 10);
 
 -- --------------------------------------------------------
 
@@ -237,14 +255,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_type`) VALUES
 (1, 'admin', 'admin@gmail.com', '202cb962ac59075b964b07152d234b70', 'admin'),
-(2, 'ngan', 'ngan@gmail.com', '202cb962ac59075b964b07152d234b70', 'user'),
-(4, 'Hương', 'hh567250@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'user'),
-(5, 'Minh', 'minh1234@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'user'),
 (9, 'don', 'don@gmail.com', 'a22e8f88026cd1c926c2ddeaf4629425', 'admin'),
-(10, 'dondeptrai', 'don123@gmail.com', '202cb962ac59075b964b07152d234b70', 'user'),
-(11, 'dona', 'dona@gmail.com', '202cb962ac59075b964b07152d234b70', 'user'),
 (12, 'Oanh', 'mydayoanhh@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'user'),
-(13, 'Hương ', 'hoanghuong3011@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'user');
+(13, 'Hương ', 'hoanghuong3011@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'user'),
+(14, 'Hương', 'hoanglanhuong3011@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'user');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -296,31 +310,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT cho bảng `lichsuxemphim`
 --
 ALTER TABLE `lichsuxemphim`
-  MODIFY `malichsu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `malichsu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `phim`
 --
 ALTER TABLE `phim`
-  MODIFY `maPhim` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `maPhim` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT cho bảng `ratings`
 --
 ALTER TABLE `ratings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
