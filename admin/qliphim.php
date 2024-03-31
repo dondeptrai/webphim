@@ -37,8 +37,8 @@
         ?> 
         <tr align="center">
         <?php
-            $phim=$row["MaTheloai"];
-            $sql1="select * from theloai where MaTheloai=$phim";
+            $phim=$row["maTheloai"];
+            $sql1="select * from theloai where maTheloai=$phim";
             $result1=$link->query($sql1);
             $row1=$result1->fetch_assoc();
         ?>
