@@ -82,7 +82,7 @@ if ($result->num_rows > 0) {
                 <h3 style="color: white;">Phim đề cử</h3>
                 <div>
                     <?php
-                    $phim = $row["MaTheloai"];
+                    $phim = $row["maTheloai"];
                     $sql = "select * from phim where maTheloai=$phim limit 0,4";
                     $result = $link->query($sql);
                     ?>
