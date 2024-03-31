@@ -78,8 +78,6 @@
                                 <p class="auth-form__policy-text">
                                     Bạn chưa có tài khoản?
                                     <a href="#show-re" class="auth-form__text-link">Đăng ký</a>
-                                    <br><a href="" class="auth-form__text-link">Quên mật khẩu</a>
-
                                 </p>
                             </div>
 
