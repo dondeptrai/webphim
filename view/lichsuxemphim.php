@@ -16,11 +16,11 @@ $idUser = $_SESSION['user_id'];
 
 // Kiểm tra nếu có yêu cầu xem phim từ người dùng
 if (isset($_GET['id_phim'])) {
-    $idPhim = $_GET['id_phim'];
+    $maPhim = $_GET['maPhim'];
     $thoiGian = date("Y-m-d H:i:s");
 
     // Chèn dữ liệu vào bảng lịch sử xem phim
-    $sql_insert = "INSERT INTO lichsuxemphim (id, idPhim, thoigian) VALUES ('$idUser', '$idPhim', '$thoiGian')";
+    $sql_insert = "INSERT INTO lichsuxemphim (id, maPhim, thoigian) VALUES ('$idUser', '$maPhim', '$thoiGian')";
     $result_insert = $link->query($sql_insert);
     if ($result_insert === false) {
         die("Lỗi khi lưu lịch sử xem phim: " . $link->error);
@@ -30,7 +30,7 @@ if (isset($_GET['id_phim'])) {
 // Truy vấn lịch sử xem phim của người dùng
 $sql = "SELECT phim.*, lichsuxemphim.thoigian 
         FROM phim 
-        INNER JOIN lichsuxemphim ON phim.maPhim = lichsuxemphim.idPhim 
+        INNER JOIN lichsuxemphim ON phim.maPhim = lichsuxemphim.maPhim 
         WHERE lichsuxemphim.id = $idUser";
 $result = $link->query($sql);
 
