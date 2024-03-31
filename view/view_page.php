@@ -42,8 +42,8 @@
             <h3>Phim đề cử</h3>
             <div>
                 <?php
-                    $phim=$row["MaTheloai"];
-                    $sql="select * from phim where MaTheloai=$phim limit 0,4";
+                    $phim=$row["maTheloai"];
+                    $sql="select * from phim where maTheloai=$phim limit 0,4";
                     $result=$link->query($sql);
                 ?>
                 <?php 
