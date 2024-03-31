@@ -27,29 +27,8 @@
                 header('location:../index.php');
             }
         } else {
-            echo "<script>alert('Email hoặc mật khẩu không đúng. Vui lòng thử lại.'); window.location.href='login.php'</script>";
+            echo "<script>alert('Email hoặc mật khẩu không đúng. Vui lòng thử lại.'); window.location.href='../index.php'</script>";
         }
     }
    
 ?>
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
-    <title>ĐĂNG NHẬP</title>
-</head>
-<body style="margin:0%">
-  <div class="log">
-    <form action="login.php" method="post">
-        <h3>ĐĂNG NHẬP</h3>
-        <input type="email" name="email" required placeholder="nhập email của bạn">
-        <input type="password" name="password" required placeholder="nhập mật khẩu">
-        <input type="submit" name="dangnhap" value="Đăng nhập" class="btn">
-        <p>Bạn chưa có tài khoản? <a href="register.php">Đăng ký</a></p>
-        <a href="quenpass.php" style="color:red;font-size:20px">Quên mật khẩu</a>
-    </form>
-  </div>  
-</body>
-</html> -->
